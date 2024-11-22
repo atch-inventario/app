@@ -1,0 +1,27 @@
+<%- include('../header') %>
+<%- include('../dialog/eliminar') %>
+    <header>
+        <span class="titulo">Tipos de documento</span>
+    </header>
+    <main>
+        <div class="main-header">
+            <%- include("../partials/busqueda") %>
+            <button id="btn-nuevo" onclick="window.location.href = 'tipos-documento/nuevo'">Nuevo</button>
+        </div>
+        <div class="table-container">
+            <table id="table" >
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+<script>document.getElementById("btn-tipos-documento").classList.add("selected");</script>
+<script type="module" src="/js/tipos-documento/lista.js"></script>
+<%- include('../footer') %>

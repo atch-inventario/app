@@ -1,0 +1,19 @@
+<%- include('../header') %>
+    <header>
+        <span class="titulo">Unidades de medida</span>
+    </header>
+    <main>
+        <div class="form-container">
+            <form action="">
+
+                <label for="nombre">Nombre: <span style="color: red;">(*)</span></label>
+                <input id="nombre" type="text" placeholder="Nombre" required>
+
+                <button id="btn_guardar">Guardar</button>
+            </form>
+        </div>
+    </main>
+<script>document.getElementById("btn-unidades-medida").classList.add("selected");</script>
+<script>const id = parseInt("<%= id %>");</script>
+<script type="module" src="/js/unidades-medida/nuevo-editar.js"></script>
+<%- include('../footer') %>

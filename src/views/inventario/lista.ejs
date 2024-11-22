@@ -1,0 +1,29 @@
+<%- include('../header') %>
+    <header>
+        <span class="titulo">Inventario</span>
+    </header>
+    <main>
+        <div class="main-header">
+            <%- include("../partials/busqueda") %>
+        </div>
+        <div class="table-container">
+            <table id="table" >
+                <thead>
+                    <tr>
+                        <th>CODIGO</th>
+                        <th>ARTICULO</th>
+                        <th>UND/MED</th>
+                        <th>ENTRADAS</th>
+                        <th>SALIDA</th>
+                        <th>TOTAL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+<script>document.getElementById("btn-inventario").classList.add("selected");</script>
+<script  type="module" src="/js/inventario/lista.js"></script>
+<%- include('../footer') %>

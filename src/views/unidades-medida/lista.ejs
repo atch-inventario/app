@@ -1,0 +1,27 @@
+<%- include('../header') %>
+<%- include('../dialog/eliminar') %>
+    <header>
+        <span class="titulo">Unidades de medida</span>
+    </header>
+    <main>
+        <div class="main-header">
+            <%- include("../partials/busqueda") %>
+            <button id="btn-nuevo" onclick="window.location.href = 'unidades-medida/nuevo'">Nuevo</button>
+        </div>
+        <div class="table-container">
+            <table id="table" >
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+    </main>
+<script>document.getElementById("btn-unidades-medida").classList.add("selected");</script>
+<script type="module" src="/js/unidades-medida/lista.js"></script>
+<%- include('../footer') %>
