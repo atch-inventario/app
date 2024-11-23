@@ -270,6 +270,7 @@ main{
         label{
             position: relative;
             input, select{
+                background-color: white;
                 padding: 8px;
                 outline: none;
                 min-width: 0px;
