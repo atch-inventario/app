@@ -5,27 +5,41 @@
     <main>
         <div class="form-container">
             <form action="">
-                <label for="fecha">Fecha <span class="color-red">(*)</span>: </label>
-                <input id="fecha" type="date" required>
+                <label>
+                    <span>Fecha</span>
+                    <input id="fecha" type="date" required>
+                </label>
                 
-                <label for="articulo">Articulo <span class="color-red">(*)</span>: </label>
-                <select id="articulo" required><option value="">-</option></select>
+                <label>
+                    <span>Articulo</span>
+                    <select id="articulo" required><option value=""> </option></select>
+                </label>
     
-                <label for="tipo_documento">Tipo Doc <span class="color-red">(*)</span>: </label>
-                <select id="tipo_documento" required><option value="">-</option></select>
-    
-                <label for="numero_documento">N° Doc: </label>
-                <input id="numero_documento" type="text">
-    
-                <label for="cantidad">Cantidad <span class="color-red">(*)</span>: </label>
-                <input id="cantidad" type="text" required>
-    
-                <label for="precio_unitario">Prec/Uint: </label>
-                <input id="precio_unitario" type="text">
-    
-                <label for="observacion">Observ: </label>
-                <input id="observacion" type="text">
-
+                <label>
+                    <span>Tipo Doc</span>
+                    <select id="tipo_documento" required><option value=""> </option></select>
+                </label>
+                
+                <label>
+                    <span>N° Doc</span>
+                    <input id="numero_documento" type="text" required>
+                </label>
+                
+                <label>
+                    <span>Cantidad</span>
+                    <input id="cantidad" type="number" required>
+                </label>
+                
+                <label>
+                    <span>Prec/Uint</span>
+                    <input id="precio_unitario" type="number" step="any" required>
+                </label>
+                
+                <label>
+                    <span>Observación</span>
+                    <input id="observacion" type="text">
+                </label>
+                
                 <button id="btn_guardar">Guardar</button>
             </form>
         </div>

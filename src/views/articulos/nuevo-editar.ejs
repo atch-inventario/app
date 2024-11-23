@@ -5,15 +5,21 @@
     <main>
         <div class="form-container">
             <form action="">
-                <label for="codigo">Codigo <span class="color-red">(*)</span>: </label>
-                <input id="codigo" type="text" placeholder="Codigo" required>
-
-                <label for="descripcion">Descripción <span class="color-red">(*)</span>: </label>
-                <input id="descripcion" type="text" placeholder="Descripción" required>
+                <label>
+                    <span>Codigo</span>
+                    <input id="codigo" type="text" placeholder="Codigo" required>
+                </label>
                 
-                <label for="unidad_medida">Unidad de Medida <span class="color-red">(*)</span>: </label>
-                <select id="unidad_medida" required><option value="">-</option></select>
-
+                <label>
+                    <span>Descripción</span>
+                    <input id="descripcion" type="text" placeholder="Descripción" required>
+                </label>
+                
+                <label>
+                    <span>Unidad de Medida</span>
+                    <select id="unidad_medida" required><option value=""> </option></select>
+                </label>
+                
                 <button id="btn_guardar">Guardar</button>
             </form>
         </div>

@@ -264,19 +264,33 @@ main{
     width: 100%;
     margin: 0px auto;
     form{
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 20px 10px;
-        input, select{
-            padding: 8px;
-            outline: none;
-            min-width: 0px;
-            width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        label{
+            position: relative;
+            input, select{
+                padding: 8px;
+                outline: none;
+                min-width: 0px;
+                width: 100%;
+                border: 1px solid rgb(77, 77, 77);
+            }
+            span{
+                background-color: white;
+                position: absolute;
+                top: -8px;
+                left: 10px;
+                font-size: 12px;
+                padding: 0px 5px;
+            }/*
+            &:has(input:not(:placeholder-shown)) span {
+                opacity: 1;
+                top: -8px;
+            }*/
         }
         button{
             padding: 8px;
-            grid-column-start: 1;
-            grid-column-end: 3;
             background-color: #0D6EFD;
             color: white;
             font-size: 15px;
@@ -286,10 +300,23 @@ main{
             border-radius: 5px;
             min-width: 0px;
             width: 100%;
+            
+        }
+        label:has(:focus:invalid) {
+            color: red;
+        }
+        label:has(:focus-visible:invalid) input{
+            outline: none;
+            border-color: red;
+            outline-color: red;
+        }
+        label:has(:focus-visible:invalid) select{
+            outline: none;
+            border-color: red;
+            outline-color: red;
         }
     }
 }
-
 
 dialog {
     margin: auto;
@@ -324,3 +351,10 @@ dialog {
         border-radius: 5px;
     }
 }
+
+
+
+
+
+
+

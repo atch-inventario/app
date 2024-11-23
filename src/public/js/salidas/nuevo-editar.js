@@ -26,6 +26,7 @@ window.addEventListener("load",async ()=>{
 
 document.querySelector("form").addEventListener("submit",async(event)=>{
     event.preventDefault();
+    btn_guardar.disabled = true;
     const obj={
         id:id,
         fecha:fecha.value,
@@ -49,4 +50,5 @@ document.querySelector("form").addEventListener("submit",async(event)=>{
     }else{
         alert("Error")
     }
+    btn_guardar.disabled = false;
 })
