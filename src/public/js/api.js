@@ -1,5 +1,4 @@
-//let  url_api=`${window.location.protocol}//${window.location.hostname}:8080`;
-let  url_api=`https://atch-inventario-api.onrender.com`;
+let  url_api=window.location.origin;
 
 function CrearRecursoApi(endpoint) {
     const url = `${url_api}${endpoint}`;
