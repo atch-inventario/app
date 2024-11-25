@@ -61,7 +61,7 @@ async function validacion(){
     const inputs = document.querySelectorAll("input[type='text']");
     inputs.forEach(input => {
         input.value=input.value.toUpperCase().trim();
-        if(input.value===""){
+        if(input.required && input.value===""){
             input.select();
             validacion=true;
             return;
