@@ -2,13 +2,15 @@ import * as api from '/js/api.js';
 const busqueda=document.getElementById("busqueda");
 let elimnar_id=null;
 
+const dialog_error=new DialogATCH("dialog-error");
+
 const dialog_eliminar=new DialogATCH("dialog-eliminar");
 dialog_eliminar.accept(async ()=>{
     let eliminado=await api.salidas.eliminar(elimnar_id)
     if(eliminado){
         await Listar();
     }else{
-        alert("Error")
+        dialog_error.open()
     }
 })
 

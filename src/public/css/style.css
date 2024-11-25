@@ -185,7 +185,7 @@ main{
         }
         
     }
-    td{
+    td,th{
         user-select: text;
     }
 }
@@ -277,6 +277,9 @@ main{
                 width: 100%;
                 border: 1px solid rgb(77, 77, 77);
             }
+            input{
+                text-transform: uppercase;
+            }
             span{
                 background-color: white;
                 position: absolute;
@@ -359,3 +362,6 @@ dialog {
 
 
 
+input{
+    user-select: text;
+}

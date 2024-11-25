@@ -1,5 +1,7 @@
 import * as api from '/js/api.js';
 
+const dialog_error=new DialogATCH("dialog-error");
+
 window.addEventListener("load",async ()=>{
     const articulos = await api.articulos.lista();
     const tipos_documento = await api.tipos_documento.lista();
@@ -26,6 +28,7 @@ window.addEventListener("load",async ()=>{
 
 document.querySelector("form").addEventListener("submit",async(event)=>{
     event.preventDefault();
+    if(await validacion())return;
     btn_guardar.disabled = true;
     const obj={
         id:id,
@@ -48,7 +51,21 @@ document.querySelector("form").addEventListener("submit",async(event)=>{
     if(guardado){
         window.location.href="/entradas";
     }else{
-        alert("Error")
+        dialog_error.open()
     }
     btn_guardar.disabled = false;
 })
+
+async function validacion(){
+    let validacion=false;
+    const inputs = document.querySelectorAll("input[type='text']");
+    inputs.forEach(input => {
+        input.value=input.value.toUpperCase().trim();
+        if(input.value===""){
+            input.select();
+            validacion=true;
+            return;
+        }
+    });
+    return validacion;
+}

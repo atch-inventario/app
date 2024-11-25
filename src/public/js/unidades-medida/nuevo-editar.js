@@ -1,5 +1,7 @@
 import * as api from '/js/api.js';
 
+const dialog_error=new DialogATCH("dialog-error");
+
 window.addEventListener("load",async ()=>{
     if(id){
         const obj=await api.unidades_medida.buscar(id)
@@ -9,6 +11,7 @@ window.addEventListener("load",async ()=>{
 
 document.querySelector("form").addEventListener("submit",async(event)=>{
     event.preventDefault();
+    if(await validacion())return;
     btn_guardar.disabled = true;
     const obj={
         id:id,
@@ -25,7 +28,21 @@ document.querySelector("form").addEventListener("submit",async(event)=>{
     if(guardado){
         window.location.href="/unidades-medida";
     }else{
-        alert("Error")
+        dialog_error.open()
     }
     btn_guardar.disabled = false;
 })
+
+async function validacion(){
+    let validacion=false;
+    const inputs = document.querySelectorAll("input[type='text']");
+    inputs.forEach(input => {
+        input.value=input.value.toUpperCase().trim();
+        if(input.value===""){
+            input.select();
+            validacion=true;
+            return;
+        }
+    });
+    return validacion;
+}
